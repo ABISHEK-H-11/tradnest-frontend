@@ -24,7 +24,7 @@ const fetchProducts = async (category = '') => {
     try {
      
       const response = await fetch(
-         `http://localhost:8080/api/customer/products${category ? `?category=${category}` : '?category=Shirts'}`, 
+         `https://tradnest-backend-production.up.railway.app/api/customer/products${category ? `?category=${category}` : '?category=Shirts'}`, 
         { credentials: 'include' }, 
       );
       
@@ -48,7 +48,7 @@ const fetchProducts = async (category = '') => {
   const fetchCartCount = async () => {
     setIsCartLoading(true); // Set loading state
     try {
-      const response = await fetch(`http://localhost:8080/api/customer/cart/count`, {
+      const response = await fetch(`https://tradnest-backend-production.up.railway.app/api/customer/cart/count`, {
         credentials: 'include', // Include authToken as a cookie
       });
       const count = await response.json();
@@ -73,7 +73,7 @@ const fetchProducts = async (category = '') => {
       return;
     }
     try {
-      const response = await fetch('http://localhost:8080/api/customer/cart/add', {
+      const response = await fetch('https://tradnest-backend-production.up.railway.app/api/customer/cart/add', {
         credentials: 'include',
         method: 'POST',
         body: JSON.stringify({ username, productId }), // Include username and productId in the request

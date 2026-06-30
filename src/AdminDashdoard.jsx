@@ -62,7 +62,7 @@ export default function AdminDashdoard() {
       ];
       const handleAddProductSubmit = async (productData) => {
         try {
-          const res = await fetch("http://localhost:8080/api/admin/product/add/products", {
+          const res = await fetch("https://tradnest-backend-production.up.railway.app/api/admin/product/add/products", {
             method: "POST",
             credentials: "include",
             headers: {
@@ -87,7 +87,7 @@ export default function AdminDashdoard() {
       const handleDeleteProductSubmit = async ({ productId }) => {
         try {
           const response = await fetch(
-            "http://localhost:8080/api/admin/product/delete/products",
+            "https://tradnest-backend-production.up.railway.app/api/admin/product/delete/products",
             {
               method: "DELETE",
               credentials: "include",
@@ -113,7 +113,7 @@ export default function AdminDashdoard() {
 
       const handleViewUserSubmit = async ({ userId }) => {
         try {
-          const response = await fetch("http://localhost:8080/api/admin/user/getbyid", {
+          const response = await fetch("https://tradnest-backend-production.up.railway.app/api/admin/user/getbyid", {
             method: "POST",
             credentials: "include",
             headers: {
@@ -145,7 +145,7 @@ export default function AdminDashdoard() {
           try {
             console.log("Fetching user details for ID:", data.userId); // Debugging
             const response = await fetch(
-              "http://localhost:8080/api/admin/user/getById",
+              "https://tradnest-backend-production.up.railway.app/api/admin/user/getById",
               {
                 method: "POST",
                 credentials: "include",
@@ -176,7 +176,7 @@ export default function AdminDashdoard() {
           try {
             console.log("Updating user details:", data); // Debugging
             const response = await fetch(
-              "http://localhost:8080/api/admin/user/modify",
+              "https://tradnest-backend-production.up.railway.app/api/admin/user/modify",
               {
                 method: "PUT",
                 credentials: "include",
@@ -212,7 +212,7 @@ export default function AdminDashdoard() {
       const handleMonthlyBusiness = async (data) => {
         try {
           const response = await fetch(
-            `http://localhost:8080/api/admin/business/month?month=${data?.month}&year=${data?.year}`,
+            `https://tradnest-backend-production.up.railway.app/api/admin/business/month?month=${data?.month}&year=${data?.year}`,
             {
               method: "GET",
               credentials: "include",
@@ -240,7 +240,7 @@ export default function AdminDashdoard() {
       const handleDailyBusiness = async (data) => {
         try {
           const response = await fetch(
-            `http://localhost:8080/api/admin/business/daily?date=${data?.date}`,
+            `https://tradnest-backend-production.up.railway.app/api/admin/business/daily?date=${data?.date}`,
             {
               method: "GET",
               credentials: "include",
@@ -269,7 +269,7 @@ export default function AdminDashdoard() {
       const handleYearlyBusiness = async (data) => {
         try {
           const response = await fetch(
-            `http://localhost:8080/api/admin/business/year?year=${data?.year}`,
+            `https://tradnest-backend-production.up.railway.app/api/admin/business/year?year=${data?.year}`,
             {
               method: "GET",
               credentials: "include",
@@ -298,7 +298,7 @@ export default function AdminDashdoard() {
       const handleOverallBusiness = async () => {
         try {
           const response = await fetch(
-            `http://localhost:8080/api/admin/business/overall`,
+            `https://tradnest-backend-production.up.railway.app/api/admin/business/overall`,
             {
               method: "GET",
               credentials: "include",

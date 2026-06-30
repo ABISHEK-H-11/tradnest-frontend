@@ -23,7 +23,7 @@ export default function OrderPage() {
   }, [username]);
   const fetchOrders = async () => {
     try {
-      const response = await fetch('http://localhost:8080/api/customer/order/details', {
+      const response = await fetch('https://tradnest-backend-production.up.railway.app/api/customer/order/details', {
         credentials: 'include',
       });
       if (!response.ok) throw new Error('Failed to fetch orders');
@@ -42,7 +42,7 @@ export default function OrderPage() {
   const fetchCartCount = async () => {
     setIsCartLoading(true); // Set loading state
     try {
-      const response = await fetch(`http://localhost:8080/api/customer/cart/count`, {
+      const response = await fetch(`https://tradnest-backend-production.up.railway.app/api/customer/cart/count`, {
         credentials: 'include',
       });
       const count = await response.json();

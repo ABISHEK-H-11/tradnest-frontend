@@ -14,7 +14,7 @@ export default function CartPage() {
     useEffect(()=> {
         const fetchCartItems = async()=> {
             try {
-                const responce = await fetch("http://localhost:8080/api/customer/cart/items",{
+                const responce = await fetch("https://tradnest-backend-production.up.railway.app/api/customer/cart/items",{
                     credentials: 'include'
                 });
                 
@@ -55,7 +55,7 @@ export default function CartPage() {
     const handleRemoveItem = async (productId) => {
       console.log(productId);
         try {
-          const response = await fetch("http://localhost:8080/api/customer/cart/delete", {
+          const response = await fetch("https://tradnest-backend-production.up.railway.app/api/customer/cart/delete", {
             method: "DELETE",
             headers: { "Content-Type": "application/json" },
             credentials: "include",
@@ -88,7 +88,7 @@ export default function CartPage() {
             handleRemoveItem(productId);
             return;
           }
-          const response = await fetch("http://localhost:8080/api/customer/cart/update", {
+          const response = await fetch("https://tradnest-backend-production.up.railway.app/api/customer/cart/update", {
             method: "PUT",
             headers: { "Content-Type": "application/json" },
             credentials: "include",
@@ -144,7 +144,7 @@ export default function CartPage() {
         };
   
         // Create Razorpay order via backend
-        const response = await fetch("http://localhost:8080/api/customer/payment/create", {
+        const response = await fetch("https://tradnest-backend-production.up.railway.app/api/customer/payment/create", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           credentials: "include",
@@ -166,7 +166,7 @@ export default function CartPage() {
           handler: async function (response) {
             try {
               // Payment success, verify on backend
-              const verifyResponse = await fetch("http://localhost:8080/api/customer/payment/verify", {
+              const verifyResponse = await fetch("https://tradnest-backend-production.up.railway.app/api/customer/payment/verify", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 credentials: "include",

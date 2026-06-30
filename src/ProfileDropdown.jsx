@@ -9,7 +9,7 @@ export default function ProfileDropdown({username}) {
         setIsOpen(!isOpen);
     }
     const handleLogout = async() => {
-        const reponce = await fetch('http://localhost:8080/api/user/logout',{
+        const reponce = await fetch('https://tradnest-backend-production.up.railway.app/api/user/logout',{
             method: "POST",
             headers: { "Content-Type": "application/json" },
             credentials: "include",

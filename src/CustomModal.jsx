@@ -518,7 +518,7 @@ const ModifyUserFormComponent = ({ onClose }) => {
 
       if (!userid) return;
 
-      const response = await fetch("http://localhost:8080/api/admin/user/getbyid", {
+      const response = await fetch("https://tradnest-backend-production.up.railway.app/api/admin/user/getbyid", {
         method: "POST",
         credentials: "include",
         headers: {
@@ -551,7 +551,7 @@ const ModifyUserFormComponent = ({ onClose }) => {
     const email = formData.get("email");
     const role = formData.get("role");
 
-    const response = await fetch("http://localhost:8080/api/admin/user/modify", {
+    const response = await fetch("https://tradnest-backend-production.up.railway.app/api/admin/user/modify", {
       method: "POST",    
       credentials: "include",
       headers: {
