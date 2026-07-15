@@ -24,7 +24,7 @@ const fetchProducts = async (category = '') => {
     try {
      
       const response = await fetch(
-         `https://tradnest-backend-production.up.railway.app/api/customer/products${category ? `?category=${category}` : '?category=Shirts'}`, 
+         `https://tradnest-backend-production.up.railway.app/api/customer/products?category=${category}`, 
         { credentials: 'include' }, 
       );
       
